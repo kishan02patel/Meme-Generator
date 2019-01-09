@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Meme Generator Website!</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	 crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-5">
+				<form>
+					<label>
+						Upload Image:<br />
+						<input type="file" id="idImage" />
+					</label>
+
+					<br /><br />
+
+					<label>
+						Text on Top:<br />
+						<input type="text" id="idTextTop" placeholder="start typing..." />
+					</label>
+
+					<label>
+						Fill color for text:<br />
+						<input type="color" id="idColorFill" />
+						<input type="text" id="idColorFillText" placeholder="or type HEX code." />
+					</label>
+					<br /><br />
+
+					<label>
+						Text on Bottom:<br />
+						<input type="text" id="idTextBottom" placeholder="start typing..." />
+					</label>
+
+					<label>
+						Outline color for text:<br />
+						<input type="color" id="idColorOutline" />
+						<input type="text" id="idColorFillText" placeholder="or type HEX code." />
+					</label>
+					<br /><br />
+					<input type="submit" value="Generate Meme" />
+				</form>
+				<!--
+					font drop down menu
+					size drop down menu
+					Image can be updated in real time instead of save button.
+				-->
+			</div>
+			<div class="col-7" style="background:green">
+				<canvas width="80%" height="80%"></canvas>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>

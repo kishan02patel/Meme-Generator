@@ -13,7 +13,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-5">
-				<form>
+				<form onsubmit="getFormData(event)">
 					<label>
 						Upload Image:<br />
 						<input type="file" id="idImage" />
@@ -41,7 +41,7 @@
 					<label>
 						Outline color for text:<br />
 						<input type="color" id="idColorOutline" />
-						<input type="text" id="idColorFillText" placeholder="or type HEX code." />
+						<input type="text" id="idColorOutlineText" placeholder="or type HEX code." />
 					</label>
 					<br /><br />
 					<input type="submit" value="Generate Meme" />
@@ -58,6 +58,8 @@
 
 		</div>
 	</div>
+
+	<script src="index.js"></script>
 </body>
 
 </html>

@@ -13,47 +13,42 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-5">
-				<form onsubmit="getFormData(event)">
-					<label>
-						Upload Image:<br />
-						<input type="file" id="idImage" />
-					</label>
+				<label>
+					Upload Image:<br />
+					<input type="file" id="idImageUpload" accept=".jpg, .jpeg, .png" onchange="getUploadedImage()" required />
+				</label>
 
-					<br /><br />
+				<br /><br />
 
-					<label>
-						Text on Top:<br />
-						<input type="text" id="idTextTop" placeholder="start typing..." />
-					</label>
+				<label>
+					Text on Top:<br />
+					<input type="text" id="idTextTop" placeholder="start typing..." />
+				</label>
 
-					<label>
-						Fill color for text:<br />
-						<input type="color" id="idColorFill" />
-						<input type="text" id="idColorFillText" placeholder="or type HEX code." />
-					</label>
-					<br /><br />
+				<label>
+					Fill color for text:<br />
+					<input type="color" id="idColorFill" />
+					<input type="text" id="idColorFillText" placeholder="or type HEX code." />
+				</label>
+				<br /><br />
 
-					<label>
-						Text on Bottom:<br />
-						<input type="text" id="idTextBottom" placeholder="start typing..." />
-					</label>
+				<label>
+					Text on Bottom:<br />
+					<input type="text" id="idTextBottom" placeholder="start typing..." />
+				</label>
 
-					<label>
-						Outline color for text:<br />
-						<input type="color" id="idColorOutline" />
-						<input type="text" id="idColorOutlineText" placeholder="or type HEX code." />
-					</label>
-					<br /><br />
-					<input type="submit" value="Generate Meme" />
-				</form>
-				<!--
-					font drop down menu
-					size drop down menu
-					Image can be updated in real time instead of save button.
-				-->
+				<label>
+					Outline color for text:<br />
+					<input type="color" id="idColorOutline" />
+					<input type="text" id="idColorOutlineText" placeholder="or type HEX code." />
+				</label>
+				<br /><br />
+
+				<button>Save</button>
 			</div>
-			<div class="col-7" style="background:green">
+			<div class="col-7 image">
 				<canvas width="80%" height="80%"></canvas>
+				<img id="idImageDisplay" width="100%" height="auto">
 			</div>
 
 		</div>
@@ -63,3 +58,10 @@
 </body>
 
 </html>
+<!--
+	-----Enhancements-----
+	** font drop down menu
+	** size drop down menu
+	** Image can be updated in real time instead of save button.
+	** Allow drag and drop event for image uploading
+-->

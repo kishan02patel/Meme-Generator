@@ -1,5 +1,6 @@
 
 // Get the reference of all the input fields so that its value can be extracted and event listeners can be set up.
+const imageHandle = document.getElementById('idImageUpload')
 const textTopHandle = document.getElementById('idTextTop')
 const colorFillHandle = document.getElementById('idColorFill')
 const colorFillTextHandle = document.getElementById('idColorFillText')
@@ -7,13 +8,19 @@ const textBottomHandle = document.getElementById('idTextBottom')
 const colorOutlineHandle = document.getElementById('idColorOutline')
 const colorOutlineTextHandle = document.getElementById('idColorOutlineText')
 
+// Get the image uploaded by the user
+function getUploadedImage() {
+	const file = event.target.files[0]
 
-function getFormData(event) {
-	event.preventDefault()
-	console.log('idTextTop', textTopHandle.value)
-	console.log('idColorFill', colorFillHandle.value)
-	console.log('idTextBottom', textBottomHandle.value)
-	console.log('idColorOutline', colorOutlineHandle.value)
+	// Generate a new FileReader Object
+	var reader = new FileReader()
+
+	reader.onload = function (event) {
+		const url = event.target.result
+		document.getElementById('idImageDisplay').src = url
+	}
+
+	reader.readAsDataURL(file)
 }
 
 

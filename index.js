@@ -1,12 +1,13 @@
 
 // Get the reference of all the input fields so that its value can be extracted and event listeners can be set up.
-const imageHandle = document.getElementById('idImageUpload')
-const textTopHandle = document.getElementById('idTextTop')
+// const imageHandle = document.getElementById('idImageUpload')
+// const textTopHandle = document.getElementById('idTextTop')
 const colorFillHandle = document.getElementById('idColorFill')
 const colorFillTextHandle = document.getElementById('idColorFillText')
-const textBottomHandle = document.getElementById('idTextBottom')
+// const textBottomHandle = document.getElementById('idTextBottom')
 const colorOutlineHandle = document.getElementById('idColorOutline')
 const colorOutlineTextHandle = document.getElementById('idColorOutlineText')
+var uploadedImage
 
 // Get the image uploaded by the user
 function getUploadedImage() {
@@ -16,11 +17,25 @@ function getUploadedImage() {
 	var reader = new FileReader()
 
 	reader.onload = function (event) {
-		const url = event.target.result
-		document.getElementById('idImageDisplay').src = url
+		uploadedImage = new Image()
+		uploadedImage.src = event.target.result
+		//document.getElementById('idImageDisplay').src = event.target.result
+		drawMeme("", "")
 	}
 
 	reader.readAsDataURL(file)
+}
+
+function drawMeme() {
+	const canvasHandle = document.getElementById('canvas')
+	const ctx = canvasHandle.getContext('2d')
+	ctx.drawImage(uploadedImage, 0, 0)
+
+}
+
+// To open the file in new tab for saving
+function saveImage() {
+	window.open(document.querySelector('canvas').toDataURL(), 'blank');
 }
 
 

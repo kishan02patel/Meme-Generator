@@ -38,6 +38,9 @@ function drawMeme() {
 	canvasHandle.height = canvasHandle.parentElement.clientHeight
 	canvasHandle.width = canvasHandle.parentElement.clientWidth
 
+	// Clear the canvas everytime.
+	ctx.clearRect(0, 0, canvasHandle.width, canvasHandle.height)
+
 	// Check whether the image is uplaoded or not.
 	if (uploadedImage != null)
 		ctx.drawImage(uploadedImage, 0, 0)
@@ -90,7 +93,7 @@ function setAllEventListeners() {
 		drawMeme()
 	})
 
-	colorFillTextHandle.addEventListener('change', () => {
+	/* colorFillTextHandle.addEventListener('change', () => {
 		// Get the value of color text input by user and set it on color picker.
 		// Do validations to check the input color format is correct. It does not accept short hand like #FFF.
 		// If correct format is not provided then use white color.
@@ -105,16 +108,17 @@ function setAllEventListeners() {
 			formattingObject.fillColor = '#FFFFFF'
 		}
 		drawMeme()
-	})
+	}) */
 
 	colorOutlineHandle.addEventListener('change', () => {
+		console.log("#" + colorOutlineHandle.jscolor)
 		// Get the value of color picker and set the value inside the input tag.
 		colorOutlineTextHandle.value = colorOutlineHandle.value
 		formattingObject.outlineColor = colorOutlineHandle.value
 		drawMeme()
 	})
 
-	colorOutlineTextHandle.addEventListener('change', () => {
+	/* colorOutlineTextHandle.addEventListener('change', () => {
 		// Get the value of color text input by user and set it on color picker.
 		// Do validations to check the input color format is correct. It does not accept short hand like #FFF.
 		// If correct format is not provided then use white color.
@@ -129,6 +133,6 @@ function setAllEventListeners() {
 			formattingObject.outlineColor = '#FFFFFF'
 		}
 		drawMeme()
-	})
+	}) */
 
 }

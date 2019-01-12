@@ -3,10 +3,11 @@
 
 <head>
 	<title>Meme Generator Website!</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-	 crossorigin="anonymous">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	 crossorigin="anonymous">
+	<script src="jscolor.js"></script>
 </head>
 
 <body>
@@ -33,14 +34,13 @@
 
 				<label>
 					Fill color for text:<br />
-					<input type="color" id="idColorFill" />
-					<input type="text" id="idColorFillText" placeholder="or type HEX code." />
+					<button class="jscolor {valueElement: 'idColorFill', styleElement:'idColorFill' } ">Select Color</button>
+					<input id="idColorFill" value="FFFFFF" />
 				</label>
 
 				<label>
 					Outline color for text:<br />
-					<input type="color" id="idColorOutline" />
-					<input type="text" id="idColorOutlineText" placeholder="or type HEX code." />
+					<input class="jscolor" id="idColorOutline" value="FFFFFF" />
 				</label>
 				<br /><br />
 			</div>

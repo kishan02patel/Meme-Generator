@@ -47,7 +47,7 @@ function drawMeme() {
 
 	// Check whether the image is uplaoded or not.
 	if (uploadedImage != null)
-		ctx.drawImage(uploadedImage, 0, 0)
+		ctx.drawImage(uploadedImage, 0, 0, canvasHandle.width, canvasHandle.height)
 
 	ctx.font = '30pt Impact';
 	ctx.textAlign = 'center';

@@ -15,7 +15,7 @@
 			<div class="col-5">
 				<label>
 					Upload Image:<br />
-					<input type="file" id="idImageUpload" accept=".jpg, .jpeg, .png" onchange="getUploadedImage()" required />
+					<input type="file" id="idImageUpload" accept="image/*" onchange="getUploadedImage(event)" required />
 				</label>
 
 				<br /><br />
@@ -47,12 +47,10 @@
 				<button onclick="saveImage()">Save</button>
 			</div>
 			<div class="col-7">
-				<canvas id="canvas" width='500px' height='500px'></canvas>
+				<canvas id="canvas"></canvas>
 			</div>
-
 		</div>
 	</div>
-
 	<script src="index.js"></script>
 </body>
 

@@ -1,6 +1,5 @@
 
 // Get the reference of all the input fields so that its value can be extracted and event listeners can be set up.
-// const imageHandle = document.getElementById('idImageUpload')
 // const textTopHandle = document.getElementById('idTextTop')
 const colorFillHandle = document.getElementById('idColorFill')
 const colorFillTextHandle = document.getElementById('idColorFillText')
@@ -10,32 +9,34 @@ const colorOutlineTextHandle = document.getElementById('idColorOutlineText')
 var uploadedImage
 
 // Get the image uploaded by the user
-function getUploadedImage() {
-	const file = event.target.files[0]
+function getUploadedImage(event) {
+	var file = event.target.files[0]
 
 	// Generate a new FileReader Object
 	var reader = new FileReader()
 
-	reader.onload = function (event) {
+	reader.onload = function (fileObject) {
 		uploadedImage = new Image()
-		uploadedImage.src = event.target.result
-		//document.getElementById('idImageDisplay').src = event.target.result
-		drawMeme("", "")
+		uploadedImage.onload = function () {
+			drawMeme("", "")
+		}
+		uploadedImage.src = fileObject.target.result
 	}
 
 	reader.readAsDataURL(file)
 }
 
-function drawMeme() {
-	const canvasHandle = document.getElementById('canvas')
-	const ctx = canvasHandle.getContext('2d')
+function drawMeme(topText, bottomText) {
+	var canvasHandle = document.getElementById('canvas')
+	canvasHandle.height = canvasHandle.parentElement.clientHeight * 0.95
+	canvasHandle.width = canvasHandle.parentElement.clientWidth * 0.95
+	var ctx = canvasHandle.getContext('2d')
 	ctx.drawImage(uploadedImage, 0, 0)
-
 }
 
 // To open the file in new tab for saving
 function saveImage() {
-	window.open(document.querySelector('canvas').toDataURL(), 'blank');
+	//window.open(document.querySelector('canvas').toDataURL(), 'blank');
 }
 
 

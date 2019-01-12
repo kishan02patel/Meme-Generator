@@ -25,7 +25,7 @@
 					Text on Top:<br />
 					<input type="text" id="idTextTop" placeholder="start typing..." />
 				</label>
-
+				<br>
 				<label>
 					Text on Bottom:<br />
 					<input type="text" id="idTextBottom" placeholder="start typing..." />
@@ -34,13 +34,17 @@
 
 				<label>
 					Fill color for text:<br />
-					<button class="jscolor {valueElement: 'idColorFill', styleElement:'idColorFill' } ">Select Color</button>
+					<button class="jscolor {valueElement: 'idColorFill', styleElement:'idColorFill', hash: 'true', closable:true,closeText:'Close me!' } ">Select
+						Color</button>
 					<input id="idColorFill" value="FFFFFF" />
 				</label>
+				<br>
 
 				<label>
 					Outline color for text:<br />
-					<input class="jscolor" id="idColorOutline" value="FFFFFF" />
+					<button class="jscolor {valueElement: 'idColorOutline', styleElement:'idColorOutline', hash: true, closable:true,closeText:'Close me!'  } ">Select
+						Color</button>
+					<input id="idColorOutline" value="FFFFFF" />
 				</label>
 				<br /><br />
 			</div>

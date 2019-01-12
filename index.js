@@ -68,10 +68,8 @@ function setAllEventListeners() {
 	// Get the reference of all the input fields so that its value can be extracted and event listeners can be set up.
 	const textTopHandle = document.getElementById('idTextTop')
 	const colorFillHandle = document.getElementById('idColorFill')
-	const colorFillTextHandle = document.getElementById('idColorFillText')
 	const textBottomHandle = document.getElementById('idTextBottom')
 	const colorOutlineHandle = document.getElementById('idColorOutline')
-	const colorOutlineTextHandle = document.getElementById('idColorOutlineText')
 
 	textTopHandle.addEventListener('keyup', () => {
 		formattingObject.topText = textTopHandle.value
@@ -83,56 +81,13 @@ function setAllEventListeners() {
 		drawMeme()
 	})
 
-	/*
-	** Add the event listeners on the color picker and color input text field.
-	*/
 	colorFillHandle.addEventListener('change', () => {
-		// Get the value of color picker and set the value inside the input tag.
-		colorFillTextHandle.value = colorFillHandle.value
 		formattingObject.fillColor = colorFillHandle.value
 		drawMeme()
 	})
 
-	/* colorFillTextHandle.addEventListener('change', () => {
-		// Get the value of color text input by user and set it on color picker.
-		// Do validations to check the input color format is correct. It does not accept short hand like #FFF.
-		// If correct format is not provided then use white color.
-
-		if (/^#[0-9A-F]{6}$/i.test(colorFillTextHandle.value)) {
-			colorFillHandle.value = colorFillTextHandle.value
-			formattingObject.fillColor = colorFillTextHandle.value
-		}
-		else {
-			alert('Please enter correct HEX format like "#10BF53"')
-			colorFillHandle.value = '#FFFFFF'
-			formattingObject.fillColor = '#FFFFFF'
-		}
-		drawMeme()
-	}) */
-
 	colorOutlineHandle.addEventListener('change', () => {
-		console.log("#" + colorOutlineHandle.jscolor)
-		// Get the value of color picker and set the value inside the input tag.
-		colorOutlineTextHandle.value = colorOutlineHandle.value
 		formattingObject.outlineColor = colorOutlineHandle.value
 		drawMeme()
 	})
-
-	/* colorOutlineTextHandle.addEventListener('change', () => {
-		// Get the value of color text input by user and set it on color picker.
-		// Do validations to check the input color format is correct. It does not accept short hand like #FFF.
-		// If correct format is not provided then use white color.
-
-		if (/^#[0-9A-F]{6}$/i.test(colorOutlineTextHandle.value)) {
-			colorOutlineHandle.value = colorOutlineTextHandle.value
-			formattingObject.outlineColor = colorOutlineTextHandle.value
-		}
-		else {
-			alert('Please enter correct HEX format like "#10BF53"')
-			colorOutlineHandle.value = '#FFFFFF'
-			formattingObject.outlineColor = '#FFFFFF'
-		}
-		drawMeme()
-	}) */
-
 }

@@ -1,5 +1,5 @@
 # Meme-Generator
-A website that lets you create memes.
+A website that lets you create memes. It is hosted on https://kishan02patel.github.io/meme-generator/
 
 -------Steps to create a meme---------
 1. Upload a image.

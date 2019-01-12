@@ -15,6 +15,13 @@ setAllEventListeners();
 	canvasHandle.width = canvasHandle.parentElement.clientWidth * 0.95
 })()
 
+function download() {
+	var download = document.getElementById("download");
+	var image = document.getElementById("canvas").toDataURL("image/png")
+		.replace("image/png", "image/octet-stream");
+	download.setAttribute("href", image);
+}
+
 // Get the image uploaded by the user
 function getUploadedImage(event) {
 	var file = event.target.files[0]
@@ -85,12 +92,12 @@ function setAllEventListeners() {
 		drawMeme()
 	})
 
-	colorFillHandle.addEventListener('change', () => {
+	colorFillHandle.addEventListener('mouseclick', () => {
 		formattingObject.fillColor = colorFillHandle.value
 		drawMeme()
 	})
 
-	colorOutlineHandle.addEventListener('change', () => {
+	colorOutlineHandle.addEventListener('mouseclick', () => {
 		formattingObject.outlineColor = colorOutlineHandle.value
 		drawMeme()
 	})

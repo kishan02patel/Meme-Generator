@@ -5,7 +5,15 @@ var formattingObject = {
 	fillColor: 'black',
 	outlineColor: 'black'
 }
-setAllEventListeners()
+setAllEventListeners();
+
+// Set the canvas height and width
+(() => {
+	let canvasHandle = document.getElementById('canvas')
+	// Set the height of the canvas to the height of the parent element times 0.95
+	canvasHandle.height = canvasHandle.parentElement.clientHeight * 0.95
+	canvasHandle.width = canvasHandle.parentElement.clientWidth * 0.95
+})()
 
 // Get the image uploaded by the user
 function getUploadedImage(event) {
@@ -33,10 +41,6 @@ function getUploadedImage(event) {
 function drawMeme() {
 	var canvasHandle = document.getElementById('canvas')
 	var ctx = canvasHandle.getContext('2d')
-
-	// Set the height of the canvas to the height of the parent element times 0.95
-	canvasHandle.height = canvasHandle.parentElement.clientHeight
-	canvasHandle.width = canvasHandle.parentElement.clientWidth
 
 	// Clear the canvas everytime.
 	ctx.clearRect(0, 0, canvasHandle.width, canvasHandle.height)

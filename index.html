@@ -8,6 +8,11 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 	 crossorigin="anonymous">
 	<script src="jscolor.js"></script>
+	<script src="nativeColorPicker.js"></script>
+	<script>
+		// init the plugin using the input id
+		window.nativeColorPicker.init('color');
+	</script>
 </head>
 
 <body>
@@ -34,7 +39,8 @@
 
 				<label>
 					Fill color for text:<br />
-					<button class="jscolor {valueElement: 'idColorFill', styleElement:'idColorFill' } ">Select Color</button>
+					<button class="jscolor {valueElement: 'idColorFill', styleElement:'idColorFill',closable:true,closeText:'Close' } ">Select
+						Color</button>
 					<input id="idColorFill" value="FFFFFF" />
 				</label>
 
@@ -43,6 +49,7 @@
 					<input class="jscolor" id="idColorOutline" value="FFFFFF" />
 				</label>
 				<br /><br />
+				<input id="color" type="color" />
 			</div>
 			<div class="col-7">
 				<canvas id="canvas"></canvas>

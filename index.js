@@ -1,4 +1,5 @@
 var uploadedImage = null
+const canvasHandle = document.getElementById('canvas')
 var formattingObject = {
 	topText: "",
 	bottomText: "",
@@ -9,7 +10,6 @@ setAllEventListeners();
 
 // Set the canvas height and width
 (() => {
-	let canvasHandle = document.getElementById('canvas')
 	// Set the height of the canvas to the height of the parent element times 0.95
 	canvasHandle.height = canvasHandle.parentElement.clientHeight * 0.95
 	canvasHandle.width = canvasHandle.parentElement.clientWidth * 0.95
@@ -18,7 +18,7 @@ setAllEventListeners();
 // To download the image
 function download() {
 	var download = document.getElementById("download");
-	var image = document.getElementById("canvas").toDataURL("image/png")
+	var image = canvasHandle.toDataURL("image/png")
 		.replace("image/png", "image/octet-stream");
 	download.setAttribute("href", image);
 }
@@ -47,7 +47,6 @@ function getUploadedImage(event) {
 ** Writes the text on the image.
 */
 function drawMeme() {
-	var canvasHandle = document.getElementById('canvas')
 	var ctx = canvasHandle.getContext('2d')
 
 	// Clear the canvas everytime.
@@ -93,12 +92,12 @@ function setAllEventListeners() {
 		drawMeme()
 	})
 
-	colorFillHandle.addEventListener('mouseclick', () => {
+	colorFillHandle.addEventListener('change', () => {
 		formattingObject.fillColor = colorFillHandle.value
 		drawMeme()
 	})
 
-	colorOutlineHandle.addEventListener('mouseclick', () => {
+	colorOutlineHandle.addEventListener('change', () => {
 		formattingObject.outlineColor = colorOutlineHandle.value
 		drawMeme()
 	})

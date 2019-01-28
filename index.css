@@ -1,3 +1,40 @@
-* {
-	box-sizing: border-box
+body {
+	background: #232F34;
+	color:white;
+}
+
+button, input {
+	border-radius: 5px;
+	color:black;
+	border: none;
+	box-shadow: 2px 2px 1px 1px black;
+	text-align: center;
+	line-height: 20px;
+	padding: 6px;
+	background: rgba(236, 237, 238, 0.904) ; 
+	margin-top: 3px;
+}
+
+button {
+	background: #F9AA33;
+	border: 1px solid rgb(191, 193, 194);
+}
+
+button:hover {
+	color:white;
+}
+
+input:focus {
+	border-radius: 0;
+	outline: solid 2px #F9AA33;
+	outline-color: #F9AA33;
+}
+
+input::placeholder {
+	color: rgb(100, 98, 98);
+}
+
+label, #download {
+	margin-top: 10px;
+	margin-left: 10px;
 }

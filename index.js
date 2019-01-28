@@ -15,6 +15,7 @@ setAllEventListeners();
 	canvasHandle.width = canvasHandle.parentElement.clientWidth * 0.95
 })()
 
+// To download the image
 function download() {
 	var download = document.getElementById("download");
 	var image = document.getElementById("canvas").toDataURL("image/png")

@@ -15,23 +15,23 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-5">
+				<br>
 				<label>
 					Upload Image:<br />
 					<input type="file" id="idImageUpload" accept="image/*" onchange="getUploadedImage(event)" required />
 				</label>
-
-				<br /><br />
+				<br>
 
 				<label>
 					Text on Top:<br />
-					<input type="text" id="idTextTop" placeholder="start typing..." />
+					<input type="text" id="idTextTop" placeholder=" start typing..." />
 				</label>
 				<br>
 				<label>
 					Text on Bottom:<br />
-					<input type="text" id="idTextBottom" placeholder="start typing..." />
+					<input type="text" id="idTextBottom" placeholder=" start typing..." />
 				</label>
-				<br /><br />
+				<br>
 
 				<label>
 					Fill color for text:<br />
@@ -47,7 +47,8 @@
 						Color</button>
 					<input id="idColorOutline" value="FFFFFF" />
 				</label>
-				<br /><br />
+				<br><br>
+
 				<a id="download" download="image.png"><button type="button" onClick="download()">Download</button></a>
 			</div>
 			<div class="col-7">
